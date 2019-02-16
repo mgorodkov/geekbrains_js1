@@ -1,0 +1,130 @@
+<meta charset="utf-8">
+<!--
+
+// Задание 1
+<script>
+let a =1, b = 1, c, d;
+c = ++a // с=2, префиксный инкремент сначала добавляет 1 к а, потом возвращает обновленное значение переменной/ с=2, a=2.
+
+d = b++ // d=1, постфиксный инкремент стачала возвращает в выражение текущее значение переменной b, потом прибавляет к нему единицу. В итоге выполнения выражения d=1, b=2.
+
+c = (2+ ++a) // В соответствии с приоритетами операторов сначала выполнаяется префиксный инкремент (а=3), далее сложение 2+3 = 5.
+
+d = (2+ b++) // Постфиксный инкремент возвращает в выражение текущее значение переменной b равное 2, после прибавляя к нему единицу. Т.о. сложение выполняется с значениями  2+2 =4. В итоге d=4, b=3.
+</script>
+
+
+
+// Задание 2
+<script>
+var a = 2;
+var x = 1 + (a *= 2); // x=5
+/*
+Запись соответствует последовательному вычислению:
+a = 2 * 2;
+x = 1 + 4;
+*/
+</script>
+-->
+
+
+
+// Задание 3
+<script>
+let a = ((Math.random() < 0.5) ? -1 : 1)*Math.floor(Math.random() * 100);
+let b = ((Math.random() < 0.5) ? -1 : 1)*Math.floor(Math.random() * 100);
+alert('Первое число: ' + a);
+alert('Второе число: ' + b);
+// получаем случайное число от 0 до 1 невключительно, умножаем на 100(произвольно выбранное ограничение диапазона), оставляем целую часть в соответствии с условием задачи, умножаем на 1 или -1 выбираемые по условию сравнения случайного числа на больше\меньше 0,5.
+
+if (a >= 0 && b >= 0) {
+	alert(Math.abs(a - b));
+	//выводим модуль разности чисел, дабы не изобретать решение задачи уже найденное до нас. справочники рулят ;)
+} 
+else if (a < 0 && b < 0) {
+	alert(a * b);
+}
+else {
+	alert(a + b);
+}
+
+
+
+// Задание 4
+function f_addition (arg1, arg2) {
+	return (arg1 + arg2);
+}
+alert('Результат сложения: ' + f_addition(a, b));
+// функция сложения, проверяем выводя результат с использованием значений переменных оставшихся от предыдущего задания.
+
+
+
+function f_subtraction (arg1, arg2) {
+	return (arg1 - arg2);
+}
+alert('Результат вычитания: ' + f_subtraction(a, b));
+//вычитание
+
+
+
+function f_multiplication (arg1, arg2) {
+	return (arg1 * arg2);
+}
+alert('Результат умножения: ' + f_multiplication(a, b));
+//умножение
+
+
+
+function f_division (arg1, arg2) {
+	return (arg1 / arg2);
+}
+alert('Результат деления: ' + f_division(a, b));
+//деление
+
+
+
+
+// Задание 5
+ function mathOperation(arg1, arg2, operation) {
+ 	switch (operation) {
+ 		case 'addition':
+ 			return (f_addition(arg1, arg2));
+ 			break;
+
+ 		case 'subtraction':
+ 			return (f_subtraction(arg1, arg2));
+ 			break;
+
+ 		case 'multiplication':
+ 			return (f_multiplication(arg1, arg2));
+ 			break; 	
+
+ 		case 'division':
+ 			return (f_division(arg1, arg2));
+ 			break;
+ 		default:
+ 		    alert('ошибка');	 					 			
+ 	}
+ }
+
+ alert('addition ' + mathOperation(a, b, 'addition'));
+  alert('subtraction ' + mathOperation(a, b, 'subtraction'));
+   alert('multiplication ' + mathOperation(a, b, 'multiplication'));
+    alert('division ' + mathOperation(a, b, 'division'));
+
+
+
+// Задание 6*
+function power(val, pow) {
+let power_multiplication = val;
+if(pow>1)
+     power_multiplication  *= power(val, pow-1);
+ return power_multiplication;
+    }
+// Задание 7*
+//Пока не успел, планирую сделать
+
+
+</script>
+
+
